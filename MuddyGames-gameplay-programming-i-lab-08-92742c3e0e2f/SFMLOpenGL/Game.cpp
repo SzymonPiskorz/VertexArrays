@@ -141,28 +141,44 @@ void Game::update()
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_index[i] = Matrix3::Translate(0.0f, 0.5f) * m_index[i];
+			float tempZ = m_index[i].z;
+			m_index[i].z = 1;
+			m_index[i] = Matrix3::Translate(0.0f, 0.1f) * m_index[i];
+
+			m_index[i].z = tempZ;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_index[i] = Matrix3::Translate(-0.5f, 0.0f) * m_index[i];
+			float tempZ = m_index[i].z;
+			m_index[i].z = 1;
+			m_index[i] = Matrix3::Translate(-0.1f, 0.0f) * m_index[i];
+
+			m_index[i].z = tempZ;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_index[i] = Matrix3::Translate(0.5f, 0.0f) * m_index[i];
+			float tempZ = m_index[i].z;
+			m_index[i].z = 1;
+			m_index[i] = Matrix3::Translate(0.1f, 0.0f) * m_index[i];
+
+			m_index[i].z = tempZ;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		for (int i = 0; i < 8; i++)
 		{
-			m_index[i] = Matrix3::Translate(0.0f, -0.5f) * m_index[i];
+			float tempZ = m_index[i].z;
+			m_index[i].z = 1;
+			m_index[i] = Matrix3::Translate(0.0f, -0.1f) * m_index[i];
+
+			m_index[i].z = tempZ;
 		}
 	}
 
